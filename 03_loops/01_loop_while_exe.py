@@ -8,7 +8,7 @@ print("\nEjercicio 1:")
 
 numeros = 10
 while numeros >= 1:
-  print(numeros)
+  print(numeros, end=" ")
   numeros = numeros - 1
 
 # Ejercicio 2: Suma de números pares (while)
