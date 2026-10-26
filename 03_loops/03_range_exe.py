@@ -55,19 +55,21 @@ print(suma, end=" ")
 # Imprime la tabla de multiplicar de ese número (del 1 al 10) usando un bucle for y range().
 print("\nEjercicio 6:")
 
-numero = int(input("Introduce un número: "))
-for i in range(1, 11):
-    print(f"{numero} x {i} = {numero * i}")
+# numero = int(input("Introduce un número: "))
+# for i in range(1, 11):
+#     print(f"{numero} x {i} = {numero * i}")
 
 print("\nEjercicio random:")
 # Modifica el ejercicio para que, además de imprimir la tabla, calcule la suma de los 10 resultados de la multiplicación y la muestre al final.
 # Por ejemplo, si ingresas 5, la suma de los resultados debería ser 275.
 
+
 numero = int(input("Introduce un número: "))
 multiplicacion = 0
 suma = 0
+
 for i in range(1, 11):
     multiplicacion = numero * i
     suma = suma + multiplicacion
-    print(f"{numero} x {i} = {numero * i}")
-print(f"Suma de todos los resultados: {suma}")
+    print(f"{numero} x {i} = {multiplicacion}")
+print(f"La suma de los resultados es: {suma}")
