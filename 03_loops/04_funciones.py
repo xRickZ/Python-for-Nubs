@@ -22,13 +22,16 @@ saludar()
 
 # # Ejemplo de una función con parámetro
 def saludar_a(nombre):
-  print(f"¡Hola {nombre}!")
+  print(f"¡Hola {nombre}!") # Parametro nombre
 
-saludar_a("midudev")
+saludar_a("midudev") # Argumento midudev
 saludar_a("madeval")
 saludar_a("pheralb")
 saludar_a("felixicaza")
 saludar_a("Carmen Ansio")
+
+#El parametro es lo que acepta la función
+#El argumento es lo que le pasamos a la función
 
 # Funciones con más parámetros
 def sumar(a, b):
