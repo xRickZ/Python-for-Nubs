@@ -54,6 +54,7 @@ print(result)
 # print(multiplicar(2, 3))
 
 # Argumentos por posición
+print("\n Argumentos por posición")
 def describir_persona(nombre: str, edad: int, sexo: str):
   print(f"Soy {nombre}, tengo {edad} años y me identifico como {sexo}")
 
@@ -68,6 +69,7 @@ describir_persona(sexo="gato", nombre="midudev", edad=25)
 describir_persona(sexo="hombre", nombre="madeval", edad=21) 
 
 # Argumentos de longitud de variable (*args):
+print("\n Argumentos de longitud de variable (*args)")
 def sumar_numeros(*args):
   suma = 0
   for numero in args:
@@ -79,6 +81,7 @@ print(sumar_numeros(1, 2))
 print(sumar_numeros(1, 2,3 ,4, 5, 6, 7, 8, 9, 10))
 
 # Argumentos de clave-valor variable (**kwargs):
+print("\n Argumentos de clave-valor variable (**kwargs)")
 def mostrar_informacion_de(**kwargs):
   for clave, valor in kwargs.items():
     print(f"{clave}: {valor}")
