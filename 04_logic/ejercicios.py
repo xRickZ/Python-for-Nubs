@@ -121,4 +121,50 @@ def calcular_promedio(lista):
 
 print(calcular_promedio([4, 6, 8, 10]))
 
+print("\n Ejercicio 8. Contar cuántas veces aparece un número")
+# Crea una función contar_apariciones(lista, objetivo) que devuelva cuántas veces aparece el objetivo.
 
+def contar_apariciones(lista, objetivo):
+    guardado = 0
+    for numeros in lista:
+        if numeros == objetivo:
+            guardado += 1
+    return guardado
+
+print(contar_apariciones([2, 5, 2, 8, 2, 5], 2))
+# Resultado: 3
+
+print("\n Ejercicio 9. Invertir una lista")
+# Crea una función invertir_lista(lista) que devuelva una lista con los elementos en orden inverso.
+
+def invertir_lista(lista):
+    num_inver = []
+    for numeros in range(len(lista)-1, -1, -1):
+        numeros = num_inver.append(lista[numeros])
+    return num_inver
+
+print(invertir_lista([1, 2, 3, 4, 5]))
+
+print("\n Ejercicio 10. Comparar dos listas")
+# Crea una función comparar_listas(lista_a, lista_b) que compare los números de ambas 
+# listas en cada posición y devuelva cuántas rondas termina ganando A.
+
+# El empate no suma puntos y puedes suponer que ambas listas tienen el mismo largo.
+
+def comparar_listas(lista_a, lista_b):
+    numeros_a = 0
+    numeros_b = 0
+    for index in range(len(lista_a)):
+        if lista_a[index] > lista_b[index]:
+            numeros_a += 1
+        elif lista_b[index] > lista_a[index]:
+            numeros_b += 1
+    if numeros_a > numeros_b:
+        return numeros_a
+    elif numeros_a < numeros_b:
+        return numeros_b
+    else:
+        return "empate"
+
+print(comparar_listas([5, 8, 3, 7], [2, 9, 3, 4]))
+# Resultado: 2
