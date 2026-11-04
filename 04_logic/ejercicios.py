@@ -154,17 +154,118 @@ print("\n Ejercicio 10. Comparar dos listas")
 def comparar_listas(lista_a, lista_b):
     numeros_a = 0
     numeros_b = 0
+    empate = 0
     for index in range(len(lista_a)):
         if lista_a[index] > lista_b[index]:
             numeros_a += 1
         elif lista_b[index] > lista_a[index]:
             numeros_b += 1
+        else:
+            empate += 1
     if numeros_a > numeros_b:
-        return numeros_a
+        return f"A gana {numeros_a} rondas"
     elif numeros_a < numeros_b:
-        return numeros_b
+        return f"B gana {numeros_b} rondas"
     else:
-        return "empate"
+        return f"Empate: {empate} rondas"
+    # return f"A gana {numeros_a} rondas | B gana {numeros_b} rondas | Empates: {empates}" Cuenta la cantidad de rondas ganadas por A, B y empates, pero funciona sin la condicion de arriba.
+    
+print (f"Resultado: {comparar_listas([5, 8, 3, 7], [2, 9, 3, 4])}")
+# Resultado: A gana 2 rondas
 
-print(comparar_listas([5, 8, 3, 7], [2, 9, 3, 4]))
-# Resultado: 2
+print("\n Ejercicio 11. Encontrar el número menor")
+#Crea una función encontrar_menor(lista) que devuelva el número más pequeño de una lista.
+def encontrar_menor(lista):
+    menor = lista[0]
+    for numero in lista:
+        if numero < menor:
+            menor = numero
+    return menor
+
+print(encontrar_menor([8, 3, 12, 1, 7]))
+
+print("\n Ejercicio 12. Eliminar números repetidos")
+#Crea una función eliminar_repetidos(lista) que devuelva una nueva lista sin elementos duplicados.
+def eliminar_repetidos(lista):
+    nueva_lista = []
+    for numero in lista:
+        if numero not in nueva_lista:
+            nueva_lista.append(numero)
+    return nueva_lista
+
+print(eliminar_repetidos([1, 2, 3, 2, 4, 1, 5]))
+
+print("\n Ejercicio 13. Contar vocales")
+#Crea una función contar_vocales(texto) que cuente cuántas vocales contiene una palabra o frase.
+def contar_vocales(texto):
+    contador = 0
+    for letra in texto:
+        if letra.lower() in "aeiouáéíóú":
+            contador += 1
+    return contador
+
+print(contar_vocales("programación"))
+
+print("\n Ejercicio 14. Separar pares e impares")
+#Crea una función separar_numeros(lista) que devuelva dos listas: una con números pares y otra con impares.
+def separar_numeros(lista):
+    pares = []
+    impares = []
+    for numero in lista:
+        if numero % 2 == 0:
+            pares.append(numero)
+        else:
+            impares.append(numero)
+    return pares, impares
+
+print(separar_numeros([1, 2, 3, 4, 5, 6]))
+
+# Un pequeño desafío extra
+# Modifica la función para que también separe los números en tres listas:
+# 1. Números positivos.
+# 2. Números negativos.
+# 3. Ceros.
+
+def separar_numeros(lista):
+    positivos = []
+    negativos = []
+    ceros = []
+    for numero in lista:
+        if numero > 0:
+            positivos.append(numero)
+        elif numero < 0:
+            negativos.append(numero)
+        else:
+            ceros.append(numero)
+    return positivos, negativos, ceros
+
+print(separar_numeros([5, -3, 0, 8, -2, 0]))
+
+print("\n Ejercicio 15. Comprobar si una palabra es palíndromo")
+#Crea una función es_palindromo(texto) que devuelva True si la palabra se lee igual al derecho y al revés.
+def es_palindromo(texto):
+    texto = texto.lower()
+    return texto == texto[::-1]
+
+print(es_palindromo("Oso"))       # True
+print(es_palindromo("Python"))    # False
+print(es_palindromo("Reconocer")) # True
+
+print("\n Ejercicio 16. Segundo número mayor")
+#Crea una función segundo_mayor(lista) que devuelva el segundo número más grande, sin contar duplicados.
+
+def segundo_mayor(lista):
+    mayor = lista[0]
+    segundo = lista[0]
+
+    for numero in lista:
+        if numero > mayor:
+            segundo = mayor
+            mayor = numero
+        elif mayor > numero > segundo:
+            segundo = numero
+
+    return segundo
+
+print(segundo_mayor([10, 5, 8, 12, 3]))
+print(segundo_mayor([-10, -5, -20, -3, -15]))
