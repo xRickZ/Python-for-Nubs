@@ -269,3 +269,60 @@ def segundo_mayor(lista):
 
 print(segundo_mayor([10, 5, 8, 12, 3]))
 print(segundo_mayor([-10, -5, -20, -3, -15]))
+
+print("\n Ejercicio 17. Contar números dentro de un rango")
+#Crea contar_rango(lista, minimo, maximo) que cuente cuántos números están entre ambos límites, inclusive.
+def contar_rango(lista, minimo, maximo):
+    contador = 0
+    for numero in lista:
+        if numero < minimo or numero > maximo:
+            contador += 1
+    return contador
+
+print(contar_rango([2, 5, 8, 10, 15, 20], 5, 15))
+# Resultado: 4
+
+print("\n Ejercicio 18. Obtener números únicos")
+#Crea obtener_unicos(lista) que devuelva una lista con los elementos que aparecen exactamente una vez.
+
+def obtener_unicos(lista):
+    unicos = []
+    for numero in lista:
+        contador = 0
+
+        for otro_numero in lista:
+            if otro_numero == numero:
+                contador += 1
+
+        if contador == 1:
+            unicos.append(numero)
+    return unicos
+
+print(obtener_unicos([1, 2, 2, 3, 4, 4, 5]))
+# Resultado: [1, 3, 5]
+
+print("\n Ejercicio 19. Número más repetido")
+#Crea una función llamada numero_mas_repetido(lista) que reciba una lista de números 
+# y devuelva el número que aparece más veces.
+
+def numero_mas_repetido(lista):
+    mayor_cantidad = 0
+    numero_mas_repetido = None
+    
+    for numero in lista:
+        mas_repetidos = 0
+
+        for otro_numero in lista:
+            if otro_numero == numero:
+                mas_repetidos += 1
+                
+        if mas_repetidos > mayor_cantidad:
+            mayor_cantidad = mas_repetidos
+            numero_mas_repetido = numero
+
+    return numero_mas_repetido
+print(numero_mas_repetido([7, 3, 7, 3, 5]))
+
+print("\n Ejercicio 20: Eliminar números negativos")
+#Crea una función llamada eliminar_negativos(lista) que reciba una lista de 
+# números y devuelva una nueva lista que contenga solamente los números positivos y el cero.
